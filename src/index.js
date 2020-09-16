@@ -5,6 +5,7 @@ import handleXhrError from './collect/xhrError'
 import handleUnhandledRejection from './collect/unhandledRejection'
 import handleNotify from './collect/notify'
 import handleVueError from './collect/vueError'
+import handlePerformance from './collect/performance'
 
 import handleCache from './cache'
 import handleReport from './report'
@@ -30,17 +31,19 @@ Reporter.init = function (config) {
     ...config
   }
 
+  handleCache(Reporter)
+  handleReport(Reporter)
+
   if (!this.config.silent) {
     if (!this.config.silentResource) handlResourceError(Reporter)
     if (!this.config.silentHttp) handleXhrError(Reporter)
     if (!this.config.slientUnhandledRejection) handleUnhandledRejection(Reporter)
+    if (!this.config.slientPerformance) handlePerformance(Reporter)
     handleJSError(Reporter)
   }
 
   handleNotify(Reporter)
   handleVueError(Reporter)
-  handleCache(Reporter)
-  handleReport(Reporter)
 
   this.run()
 }

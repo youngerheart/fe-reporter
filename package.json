@@ -18,7 +18,7 @@
     "README.md"
   ],
   "author": "younger",
-  "license": "private",
+  "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.4.5",
     "axios": "^0.19.0",

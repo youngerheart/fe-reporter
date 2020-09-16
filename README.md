@@ -6,9 +6,10 @@ Front-end error reporter.
 
 ### 安装
 ```
-$ cnpm install @xiaoe/error-reporter
+// 未发布
+$ cnpm install error-reporter
 
-import Reporter from '@xiaoe/error-reporter'
+import Reporter from 'error-reporter'
 Reporter.init(params)
 
 // 在使用 Vue 的情况下，还需要使用 use 以获取框架内部报错。
@@ -23,7 +24,7 @@ Vue.use(Reporter.vueError, Reporter)
 | moduleName | 项目标识名 | String | `demo` |
 | filter | url匹配该正则或字符串则不上报 | RegExp | `null` |
 | delay | 每隔多少毫秒上报缓冲区数据 | Number | `1000` |
-| url | 指定上报地址 | String | `report.xiaoe-tech.com` |
+| url | 指定上报地址 | String | `http://localhost:8089` |
 | sample | 上报比例(0-1) | Number | `1` |
 | repeat | 单页重复上报次数，高于此值不上报 | Number | `10` |
 | globals| 需要上报的全局变量 | Array | `['APPID', 'USERID']` |
@@ -31,6 +32,7 @@ Vue.use(Reporter.vueError, Reporter)
 | silentResource | 不上报资源加载错误 | Boolean | `false` |
 | silentHttp | 不上报 HTTP 请求错误 | Boolean | `false` |
 | slientUnhandledRejection | 不上报 unhandledrejection 错误 | Boolean | `false` |
+| slientPerformance | 不上报 performance 信息 | Boolean | `false` |
 
 ### 手动自定义报错
 

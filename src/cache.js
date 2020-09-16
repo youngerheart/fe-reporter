@@ -8,7 +8,7 @@ export default function (Reporter) {
 
   let countObj = {}
 
-  let storageStr = localStorage.getItem('xiaoe-reporter')
+  let storageStr = localStorage.getItem('fe-reporter')
 
   if (storageStr) {
     try {
@@ -36,7 +36,7 @@ export default function (Reporter) {
     }
   }
   Reporter.setStorage = function (stack) {
-    localStorage.setItem('xiaoe-reporter', JSON.stringify(stack))
+    localStorage.setItem('fe-reporter', JSON.stringify(stack))
   }
   Reporter.run = function () {
     let { delay } = this.config
@@ -45,7 +45,7 @@ export default function (Reporter) {
       // setInterval for delay time
       interval = setInterval(() => {
         if (stack.length) this.send(stack)
-        else localStorage.removeItem('xiaoe-reporter')
+        else localStorage.removeItem('fe-reporter')
       }, delay)
     } else {
       // send cached stack only

@@ -68,10 +68,10 @@ aler("hello") // alert 被写成了 aler
 ```
 // 登陆账户时密码错误，因此会报403错误。
 var xhr = new XMLHttpRequest()
-xhr.open("POST", "https://api.xiaoe-tech.com/login")
+xhr.open("POST", "https://api.domain.com/login")
 xhr.setRequestHeader('Content-Type', 'application/json')
 xhr.send(JSON.stringify({
-    email: "help@xiaoe-tech.com",
+    email: "help@domain.com",
     password: "akhakfnak"
 }))
 

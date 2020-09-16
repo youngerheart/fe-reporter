@@ -6,7 +6,7 @@ export default function (Reporter) {
 
   let switchObj = {}
 
-  let cachedStr = localStorage.getItem('xiaoe-reporter-switch')
+  let cachedStr = localStorage.getItem('fe-reporter-switch')
 
   if (cachedStr) {
     try {
@@ -27,7 +27,7 @@ export default function (Reporter) {
       }).then(({ data }) => {
         if (data && data.status) {
           switchObj[moduleName] = Date.now()
-          localStorage.setItem('xiaoe-reporter-switch', JSON.stringify(switchObj))
+          localStorage.setItem('fe-reporter-switch', JSON.stringify(switchObj))
           reslove()
         } else reject('switch closed')
       }).catch(reject)
